@@ -1,4 +1,5 @@
 com\unab\edu\vistas\crudProveedor.class
+com\unab\edu\vistas\crudCliente$4.class
 com\unab\edu\vistas\crudEmpleado.class
 com\unab\edu\vistas\Login.class
 com\unab\edu\vistas\crudEmpleado$2.class
@@ -21,6 +22,7 @@ com\unab\edu\vistas\crudUsuario.class
 com\unab\edu\dao\MarcaDao.class
 com\unab\edu\dao\EmpleadoDao.class
 com\unab\edu\entidades\Modelo.class
+com\unab\edu\vistas\crudCliente$3.class
 com\unab\edu\entidades\Usuario.class
 com\unab\edu\conexion\Conexion.class
 com\unab\edu\vistas\crudModelo$1.class

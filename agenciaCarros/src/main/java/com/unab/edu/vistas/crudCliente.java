@@ -80,8 +80,8 @@ public class crudCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTipoCliente1 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        pnMenu = new javax.swing.JTabbedPane();
+        tbDatos = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         lblIdCliente = new javax.swing.JLabel();
@@ -109,7 +109,7 @@ public class crudCliente extends javax.swing.JFrame {
         txtDuiCliente = new javax.swing.JTextField();
         lblNombreCliente1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        tbListado = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -123,7 +123,7 @@ public class crudCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Proveedor");
 
-        jTabbedPane1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        pnMenu.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -326,23 +326,23 @@ public class crudCliente extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.jpg"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 410));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout tbDatosLayout = new javax.swing.GroupLayout(tbDatos);
+        tbDatos.setLayout(tbDatosLayout);
+        tbDatosLayout.setHorizontalGroup(
+            tbDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tbDatosLayout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        tbDatosLayout.setVerticalGroup(
+            tbDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tbDatosLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("DATOS", jPanel1);
+        pnMenu.addTab("DATOS", tbDatos);
 
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -363,6 +363,11 @@ public class crudCliente extends javax.swing.JFrame {
             }
         ));
         tbClientes.setOpaque(false);
+        tbClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbClientesMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tbClientes);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -387,32 +392,32 @@ public class crudCliente extends javax.swing.JFrame {
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/6.jpg"))); // NOI18N
         jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 410));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout tbListadoLayout = new javax.swing.GroupLayout(tbListado);
+        tbListado.setLayout(tbListadoLayout);
+        tbListadoLayout.setHorizontalGroup(
+            tbListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tbListadoLayout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        tbListadoLayout.setVerticalGroup(
+            tbListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tbListadoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jTabbedPane1.addTab("LISTADO", jPanel2);
+        pnMenu.addTab("LISTADO", tbListado);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(pnMenu)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -454,6 +459,33 @@ public class crudCliente extends javax.swing.JFrame {
         MostrarClientes();
         Limpiar();
     }//GEN-LAST:event_btnElminar1ActionPerformed
+
+    private void tbClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClientesMouseClicked
+        pnMenu.setSelectedIndex(pnMenu.indexOfComponent(tbDatos));
+        //Obtener la fila seleccionada
+        int fila = tbClientes.getSelectedRow();
+        //Capturando los datos de la fila seleccionada "IDEMPLEADO", "NOMBRE", "APELLIDO","SEXO", "DIRECCIÓN","TELÉFONO", "DUI", "NIT","CARGO","DEPARTAMENTO"
+        String IdCliente = String.valueOf(tbClientes.getValueAt(fila, 0));
+        String Nombre = String.valueOf(tbClientes.getValueAt(fila, 1));
+        String Tipo = String.valueOf(tbClientes.getValueAt(fila, 2));
+        String Contacto = String.valueOf(tbClientes.getValueAt(fila, 3));
+        String Telefono = String.valueOf(tbClientes.getValueAt(fila, 4));
+        String Direccion = String.valueOf(tbClientes.getValueAt(fila, 5));
+        String Correo = String.valueOf(tbClientes.getValueAt(fila, 6));
+        String Dui = String.valueOf(tbClientes.getValueAt(fila, 7));
+        String Nit = String.valueOf(tbClientes.getValueAt(fila, 8));
+        String Nrc = String.valueOf(tbClientes.getValueAt(fila, 9));
+        lblIdCliente.setText(IdCliente);
+        txtNombreCliente.setText(Nombre);
+        txtTipoCliente.setText(Tipo);
+        txtContactoCliente.setText(Contacto);
+        txtTelefonoCliente.setText(Telefono);
+        txtDireccion.setText(Direccion);
+        txtCorreoCliente.setText(Correo);
+        txtDuiCliente.setText(Dui);
+        txtNitCliente.setText(Nit);
+        txtNrcCliente.setText(Nrc);
+    }//GEN-LAST:event_tbClientesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -498,15 +530,12 @@ public class crudCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblContactoCliente;
     private javax.swing.JLabel lblCorreoCliente;
     private javax.swing.JLabel lblDireccionCliente;
@@ -518,7 +547,10 @@ public class crudCliente extends javax.swing.JFrame {
     private javax.swing.JLabel lblTipoCliente;
     private javax.swing.JLabel lblTipoCliente1;
     private javax.swing.JLabel lblTipoCliente2;
+    private javax.swing.JTabbedPane pnMenu;
     private javax.swing.JTable tbClientes;
+    private javax.swing.JPanel tbDatos;
+    private javax.swing.JPanel tbListado;
     private javax.swing.JTextField txtContactoCliente;
     private javax.swing.JTextField txtCorreoCliente;
     private javax.swing.JTextArea txtDireccion;
