@@ -3,6 +3,7 @@ com\unab\edu\vistas\crudEmpleado.class
 com\unab\edu\vistas\Login.class
 com\unab\edu\vistas\crudEmpleado$2.class
 com\unab\edu\dao\ModeloDao.class
+com\unab\edu\vistas\crudCliente$2.class
 com\unab\edu\dao\ClienteDao.class
 com\unab\edu\vistas\crudUsuario$2.class
 com\unab\edu\entidades\Cliente.class
