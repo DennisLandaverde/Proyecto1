@@ -195,6 +195,11 @@ public class crudCliente extends javax.swing.JFrame {
 
         btnElminar1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         btnElminar1.setText("Eliminar");
+        btnElminar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElminar1ActionPerformed(evt);
+            }
+        });
 
         lblTipoCliente2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         lblTipoCliente2.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,7 +258,7 @@ public class crudCliente extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(45, 45, 45)
                     .addComponent(lblNombreCliente1)
-                    .addContainerGap(518, Short.MAX_VALUE)))
+                    .addContainerGap(503, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,7 +318,7 @@ public class crudCliente extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(32, 32, 32)
                     .addComponent(lblNombreCliente1)
-                    .addContainerGap(350, Short.MAX_VALUE)))
+                    .addContainerGap(339, Short.MAX_VALUE)))
         );
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 400));
@@ -440,6 +445,15 @@ public class crudCliente extends javax.swing.JFrame {
         Limpiar();
                                
     }//GEN-LAST:event_btnGuardarClienteActionPerformed
+
+    private void btnElminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElminar1ActionPerformed
+        ClienteDao clienteDao = new ClienteDao();
+        Cliente cliente = new Cliente();
+        cliente.setIdCliente(Integer.parseInt(lblIdCliente.getText()));
+        clienteDao.eliminarEmpleado(cliente);
+        MostrarClientes();
+        Limpiar();
+    }//GEN-LAST:event_btnElminar1ActionPerformed
 
     /**
      * @param args the command line arguments
