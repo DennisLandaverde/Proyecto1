@@ -43,7 +43,7 @@ public class ClienteDao {
 
     }
 
-    public void actualizarEmpleado(Cliente cliente) {
+    public void ActualizarCliente(Cliente cliente) {
         try {
             CallableStatement statement = con.prepareCall("call SP_U_Cliente(?,?,?,?,?,?,?,?,?,?)");
             statement.setString("CNombre", cliente.getNombre());
@@ -65,7 +65,7 @@ public class ClienteDao {
 
     }
 
-    public void eliminarEmpleado(Cliente cliente) {
+    public void EliminarCliente(Cliente cliente) {
          try {
             CallableStatement statement = con.prepareCall("call SP_D_Cliente(?);");
             statement.setInt("CIdCliente", cliente.getIdCliente());

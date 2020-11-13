@@ -101,7 +101,7 @@ public class crudCliente extends javax.swing.JFrame {
         lblNrcCliente = new javax.swing.JLabel();
         txtNrcCliente = new javax.swing.JTextField();
         btnGuardarCliente = new javax.swing.JButton();
-        btnElminar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         txtTipoCliente = new javax.swing.JTextField();
         btnElminar1 = new javax.swing.JButton();
@@ -185,11 +185,21 @@ public class crudCliente extends javax.swing.JFrame {
             }
         });
 
-        btnElminar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        btnElminar.setText("Eliminar");
+        btnActualizar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         txtTipoCliente.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
 
@@ -252,7 +262,7 @@ public class crudCliente extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(btnLimpiar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnElminar)))
+                        .addComponent(btnActualizar)))
                 .addGap(30, 30, 30))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
@@ -312,7 +322,7 @@ public class crudCliente extends javax.swing.JFrame {
                     .addComponent(btnGuardarCliente)
                     .addComponent(btnElminar1)
                     .addComponent(btnLimpiar)
-                    .addComponent(btnElminar))
+                    .addComponent(btnActualizar))
                 .addContainerGap())
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
@@ -444,7 +454,7 @@ public class crudCliente extends javax.swing.JFrame {
             clienteDao.AgregarCliente(cliente);
         } else {
             cliente.setIdCliente(Integer.parseInt(lblIdCliente.getText()));
-            clienteDao.actualizarEmpleado(cliente);
+            clienteDao.AgregarCliente(cliente);
         }
         MostrarClientes();
         Limpiar();
@@ -455,7 +465,7 @@ public class crudCliente extends javax.swing.JFrame {
         ClienteDao clienteDao = new ClienteDao();
         Cliente cliente = new Cliente();
         cliente.setIdCliente(Integer.parseInt(lblIdCliente.getText()));
-        clienteDao.eliminarEmpleado(cliente);
+        clienteDao.EliminarCliente(cliente);
         MostrarClientes();
         Limpiar();
     }//GEN-LAST:event_btnElminar1ActionPerformed
@@ -486,6 +496,19 @@ public class crudCliente extends javax.swing.JFrame {
         txtNitCliente.setText(Nit);
         txtNrcCliente.setText(Nrc);
     }//GEN-LAST:event_tbClientesMouseClicked
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        ClienteDao clienteDao = new ClienteDao();
+        Cliente cliente = new Cliente();
+        cliente.setIdCliente(Integer.parseInt(lblIdCliente.getText()));
+        clienteDao.ActualizarCliente(cliente);
+        MostrarClientes();
+        Limpiar();
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        Limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -524,7 +547,7 @@ public class crudCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnElminar;
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnElminar1;
     private javax.swing.JButton btnGuardarCliente;
     private javax.swing.JButton btnLimpiar;
