@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Mauricio
+ * @author
  */
 public class ClienteDao {
 
@@ -47,6 +47,7 @@ public class ClienteDao {
         try {
             CallableStatement statement = con.prepareCall("call SP_U_Cliente(?,?,?,?,?,?,?,?,?,?)");
             statement.setString("CNombre", cliente.getNombre());
+            statement.setInt("CIdCliente", cliente.getIdCliente());
             statement.setString("CTipo", cliente.getTipo());
             statement.setString("CContacto", cliente.getContacto());
             statement.setString("CTelefono", cliente.getTelefono());
@@ -57,9 +58,9 @@ public class ClienteDao {
             statement.setString("CNrc", cliente.getNrc());
             statement.execute();
             con.close();
-            JOptionPane.showMessageDialog(null, "Cliente actualizado correctamente");
+            JOptionPane.showMessageDialog(null, "Cliente Actualizado Correctamente");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al actualizar a cliente");
+            JOptionPane.showMessageDialog(null, "Error al Actualizar a Cliente");
 
         }
 

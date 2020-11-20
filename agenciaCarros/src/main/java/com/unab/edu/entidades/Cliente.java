@@ -9,7 +9,7 @@ import lombok.Data;
 
 /**
  *
- * @author Mauricio
+ * @author
  */
 @Data
 public class Cliente {

@@ -18,12 +18,11 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Mauricio
  */
 public class crudCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form crudProveedor
+     *
      */
     public crudCliente() {
         initComponents();
@@ -67,6 +66,7 @@ public class crudCliente extends javax.swing.JFrame {
         txtNitCliente.setText("");
         txtNrcCliente.setText("");
         txtDuiCliente.setText("");
+        lblIdCliente.setText("");
     }
 
   
@@ -101,7 +101,6 @@ public class crudCliente extends javax.swing.JFrame {
         lblNrcCliente = new javax.swing.JLabel();
         txtNrcCliente = new javax.swing.JTextField();
         btnGuardarCliente = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         txtTipoCliente = new javax.swing.JTextField();
         btnElminar1 = new javax.swing.JButton();
@@ -185,14 +184,6 @@ public class crudCliente extends javax.swing.JFrame {
             }
         });
 
-        btnActualizar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        btnActualizar.setText("Actualizar");
-        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarActionPerformed(evt);
-            }
-        });
-
         btnLimpiar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -228,24 +219,30 @@ public class crudCliente extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCorreoCliente)
-                            .addComponent(txtNombreCliente, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1))
-                        .addComponent(lblCorreoCliente)
-                        .addComponent(lblDireccionCliente)
-                        .addComponent(txtDuiCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblTipoCliente2))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtCorreoCliente)
+                                .addComponent(txtNombreCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jScrollPane1))
+                            .addComponent(lblCorreoCliente)
+                            .addComponent(lblDireccionCliente)
+                            .addComponent(txtDuiCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTipoCliente2))
+                        .addGap(35, 35, 35))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(btnGuardarCliente)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnElminar1)
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                        .addComponent(lblContactoCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
+                        .addComponent(lblIdCliente))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnLimpiar)
                             .addComponent(txtContactoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblTelefonoCliente)
                             .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -254,15 +251,8 @@ public class crudCliente extends javax.swing.JFrame {
                             .addComponent(lblNrcCliente)
                             .addComponent(txtNrcCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblTipoCliente)
-                            .addComponent(txtTipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(lblContactoCliente)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
-                                .addComponent(lblIdCliente))))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(btnLimpiar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnActualizar)))
+                            .addComponent(txtTipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(30, 30, 30))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
@@ -321,8 +311,7 @@ public class crudCliente extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarCliente)
                     .addComponent(btnElminar1)
-                    .addComponent(btnLimpiar)
-                    .addComponent(btnActualizar))
+                    .addComponent(btnLimpiar))
                 .addContainerGap())
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
@@ -454,7 +443,7 @@ public class crudCliente extends javax.swing.JFrame {
             clienteDao.AgregarCliente(cliente);
         } else {
             cliente.setIdCliente(Integer.parseInt(lblIdCliente.getText()));
-            clienteDao.AgregarCliente(cliente);
+            clienteDao.ActualizarCliente(cliente);
         }
         MostrarClientes();
         Limpiar();
@@ -497,15 +486,6 @@ public class crudCliente extends javax.swing.JFrame {
         txtNrcCliente.setText(Nrc);
     }//GEN-LAST:event_tbClientesMouseClicked
 
-    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        ClienteDao clienteDao = new ClienteDao();
-        Cliente cliente = new Cliente();
-        cliente.setIdCliente(Integer.parseInt(lblIdCliente.getText()));
-        clienteDao.ActualizarCliente(cliente);
-        MostrarClientes();
-        Limpiar();
-    }//GEN-LAST:event_btnActualizarActionPerformed
-
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         Limpiar();
     }//GEN-LAST:event_btnLimpiarActionPerformed
@@ -547,7 +527,6 @@ public class crudCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnElminar1;
     private javax.swing.JButton btnGuardarCliente;
     private javax.swing.JButton btnLimpiar;
