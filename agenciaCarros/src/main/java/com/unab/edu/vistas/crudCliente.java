@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  */
 public class crudCliente extends javax.swing.JFrame {
-
+//HolaSoyGerman
     /**
      *
      */
